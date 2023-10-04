@@ -26,3 +26,4 @@ Currently, this system use khalti v2 api endpoints.
 
 - Endpoint Request/Response Docs: https://docs.khalti.com/checkout/diy-wallet/
 - Khalti merchant login: https://admin.khalti.com
+- Video Tutorial : https://youtu.be/HdhIk4qdnKU?si=-AQpPasvkZYjx2lF

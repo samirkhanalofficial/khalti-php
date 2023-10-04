@@ -15,7 +15,7 @@ $amount = 10;
 $uniqueProductId = "nike-shoes";
 $uniqueUrl = "http://localhost/product/nike-shoes/";
 $uniqueProductName = "Nike shoes";
-$successRedirect = "https://samirk.com.np"; // change this url , it will be the page user will be redirected after successful payment
+$successRedirect = "/"; // change this url , it will be the page user will be redirected after successful payment
 
 
 // ------------------------------------------------------------------------
@@ -182,76 +182,76 @@ if (isset($_POST["otp"]) && isset($_POST["token"]) && isset($_POST["mpin"])) {
     if ($token == "") {
 
         ?>
-        <form action="pay.php" method="post">
-            <small>Mobile Number:</small> <br>
-            <input type="number" class="number" minlength="10" maxlength="10" name="mobile" placeholder="98xxxxxxxx">
-            <small>Khalti Mpin:</small> <br>
-            <input type="password" class="mpin" name="mpin" minlength="4" maxlength="6" placeholder="xxxx">
-            <small>Price:</small> <br>
+    <form action="pay.php" method="post">
+        <small>Mobile Number:</small> <br>
+        <input type="number" class="number" minlength="10" maxlength="10" name="mobile" placeholder="98xxxxxxxx">
+        <small>Khalti Mpin:</small> <br>
+        <input type="password" class="mpin" name="mpin" minlength="4" maxlength="6" placeholder="xxxx">
+        <small>Price:</small> <br>
 
-            <input type="text" class="price" Value="Rs. <?php echo $price; ?>" disabled>
-            <input type="hidden" class="price" name="amount" Value="<?php echo $price; ?>">
-            <br>
-            <span style="display:block;color:red;">
-                <?php echo $error_message; ?>
-            </span>
-            <button>Pay Rs.
-                <?php echo $price; ?>
-            </button>
-            <br>
-            <small>We dont store your credientials for some security reasons. You will have to reenter your details
-                everytime.</small>
-        </form>
+        <input type="text" class="price" Value="Rs. <?php echo $price; ?>" disabled>
+        <input type="hidden" class="price" name="amount" Value="<?php echo $price; ?>">
+        <br>
+        <span style="display:block;color:red;">
+            <?php echo $error_message; ?>
+        </span>
+        <button>Pay Rs.
+            <?php echo $price; ?>
+        </button>
+        <br>
+        <small>We dont store your credientials for some security reasons. You will have to reenter your details
+            everytime.</small>
+    </form>
     <?php }
     if ($token != "") {
         ?>
-        <form action="pay.php" method="post">
-            <input type="hidden" name="token" value="<?php echo $token; ?>">
-            <input type="hidden" name="mpin" value="<?php echo $mpin; ?>">
-            <small>OTP:</small> <br>
-            <input type="number" value="" name="otp" placeholder="xxxx">
-            <?php
+    <form action="pay.php" method="post">
+        <input type="hidden" name="token" value="<?php echo $token; ?>">
+        <input type="hidden" name="mpin" value="<?php echo $mpin; ?>">
+        <small>OTP:</small> <br>
+        <input type="number" value="" name="otp" placeholder="xxxx">
+        <?php
 
             ?>
-            <span style="display:block;color:red;">
-                <?php echo $error_message; ?>
-            </span>
-            <button>pay RS.
-                <?php echo $price; ?>
+        <span style="display:block;color:red;">
+            <?php echo $error_message; ?>
+        </span>
+        <button>pay RS.
+            <?php echo $price; ?>
 
-            </button>
-        </form>
-        <?php
+        </button>
+    </form>
+    <?php
     } ?>
 </div>
 <style>
-    .khalticontainer {
-        width: 300px;
-        border: 2px solid #5C2D91;
-        margin: 0 auto;
-        padding: 8px;
-    }
+.khalticontainer {
+    width: 300px;
+    border: 2px solid #5C2D91;
+    margin: 0 auto;
+    padding: 8px;
+}
 
-    input {
-        display: block;
-        width: 98%;
-        padding: 8px;
-        margin: 2px;
-    }
+input {
+    display: block;
+    width: 98%;
+    padding: 8px;
+    margin: 2px;
+}
 
-    button {
-        display: block;
-        background-color: #5C2D91;
-        border: none;
-        color: white;
-        cursor: pointer;
+button {
+    display: block;
+    background-color: #5C2D91;
+    border: none;
+    color: white;
+    cursor: pointer;
 
-        width: 98%;
-        padding: 8px;
-        margin: 2px;
-    }
+    width: 98%;
+    padding: 8px;
+    margin: 2px;
+}
 
-    button:hover {
-        opacity: 0.8;
-    }
+button:hover {
+    opacity: 0.8;
+}
 </style>
