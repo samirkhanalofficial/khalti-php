@@ -2,7 +2,7 @@
 
 // Author : Samir Khanal
 $error_message = "";
-$khalti_public_key = "your-khalti-public-api-key-here";
+$khalti_public_key = "your-public-api-key";
 
 // Run your code here to get your amount and product id and product url. Change this dynamically.
 // ------------------------------------------------------------------------
@@ -15,7 +15,7 @@ $amount = 10;
 $uniqueProductId = "nike-shoes";
 $uniqueUrl = "http://localhost/product/nike-shoes/";
 $uniqueProductName = "Nike shoes";
-$successRedirect = "/"; // change this url , it will be the page user will be redirected after successful payment
+$successRedirect = "https://samirk.com.np"; // change this url , it will be the page user will be redirected after successful payment
 
 
 // ------------------------------------------------------------------------
@@ -149,7 +149,7 @@ if (isset($_POST["otp"]) && isset($_POST["token"]) && isset($_POST["mpin"])) {
 
         curl_close($curl);
         $parsed = json_decode($response, true);
-        echo $response;
+
         if (key_exists("token", $parsed)) {
             $isvalid = checkValid($parsed);
             if ($isvalid) {
@@ -186,7 +186,7 @@ if (isset($_POST["otp"]) && isset($_POST["token"]) && isset($_POST["mpin"])) {
             <small>Mobile Number:</small> <br>
             <input type="number" class="number" minlength="10" maxlength="10" name="mobile" placeholder="98xxxxxxxx">
             <small>Khalti Mpin:</small> <br>
-            <input type="number" class="mpin" name="mpin" minlength="4" maxlength="6" placeholder="xxxx">
+            <input type="password" class="mpin" name="mpin" minlength="4" maxlength="6" placeholder="xxxx">
             <small>Price:</small> <br>
 
             <input type="text" class="price" Value="Rs. <?php echo $price; ?>" disabled>
